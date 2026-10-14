@@ -3,12 +3,19 @@ import ma.youcode.clicktrack.entity.Publisher;
 
 import java.util.ArrayList;
 import java.util.List;
-public class PublisherRepositoryImpl implements PublisherRepository {
+public class
+PublisherRepositoryImpl implements PublisherRepository {
     private final List<Publisher> publishers = new ArrayList<>();
 
     @Override
     public List<Publisher> findAll() {
         return new ArrayList<>(publishers);
+    }
+
+    @Override
+    public Publisher save(Publisher publisher) {
+        publishers.add(publisher);
+        return publisher;
     }
 
 }

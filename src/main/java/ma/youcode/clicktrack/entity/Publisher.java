@@ -8,7 +8,7 @@ public class Publisher {
     private String prenom;
     private String email;
     private Categorie categorie;
-
+    public Publisher(){}
     public Publisher(int id, String nom, String prenom,String email, Categorie categorie) {
         this.id = id;
         this.nom = nom;
@@ -16,7 +16,9 @@ public class Publisher {
         this.email = email;
         this.categorie = categorie;
     }
-
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getId() {
         return id;
     }
