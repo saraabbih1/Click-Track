@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="
            http://www.springframework.org/schema/beans
-           https://www.springframework.org/schema/beans/spring-beans.xsd">
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           https://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/mvc
+           https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <property name="mappings">
-            <props>
-                <prop key="/api/ping">pingController</prop>
-            </props>
-        </property>
+    <context:component-scan base-package="ma.youcode.clicktrack.controller"/>
+
+    <mvc:annotation-driven/>
+
+    <bean id="publisherRepository"
+          class="ma.youcode.clicktrack.repository.PublisherRepositoryImpl"/>
+
+    <bean id="publisherService"
+          class="ma.youcode.clicktrack.service.PublisherService">
+        <constructor-arg ref="publisherRepository"/>
     </bean>
-
-    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
 
     <bean id="pingController"
           class="ma.youcode.controller.PingController"/>
