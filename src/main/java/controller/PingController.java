@@ -13,7 +13,6 @@ public class PingController implements Controller {
     public ModelAndView handleRequest(
             HttpServletRequest request,
             HttpServletResponse response) throws IOException {
-
         response.setContentType("text/plain");
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write("ClickTrack is working!");
