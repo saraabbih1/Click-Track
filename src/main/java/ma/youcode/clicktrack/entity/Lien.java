@@ -8,7 +8,8 @@ public class Lien {
     private String urlDestination;
     private int clicks;
     private int publisherId;
-
+    public Lien() {
+    }
     public Lien(int id, String offre, String urlDestination,int clicks, int publisherId) {
         this.id = id;
         this.offre = offre;

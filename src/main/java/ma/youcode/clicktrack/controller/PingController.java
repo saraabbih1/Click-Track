@@ -1,4 +1,4 @@
-package ma.youcode.controller;
+package controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
