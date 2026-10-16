@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import ma.youcode.clicktrack.entity.Lien;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/publishers")
@@ -58,5 +59,10 @@ public class PublisherController {
                 lien.getUrlDestination()
         );
     }
+
+   @GetMapping("/{id}/offres")
+    public List<Map<String,Object>> getOffres(@PathVariable("id")int id){
+        return lienService.getOffresByPublisherId(id);
+   }
 
 }

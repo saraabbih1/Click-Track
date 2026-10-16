@@ -24,22 +24,26 @@ public class TrackingController {
         this.lienService = lienService;
         this.publisherService = publisherService;
     }
+    @GetMapping("/test-tracking")
+    public String testTracking() {
+        return "TrackingController works";
+    }
+   @GetMapping("/t/{id}")
 
-    @GetMapping("/t/{id}")
     public Map<String, Object> trackClick(@PathVariable("id") int id) {
-
         Lien lien = lienService.findById(id);
 
         if (lien == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
 
-        Publisher publisher =
-                publisherService.findById(lien.getPublisherId());
+       Publisher publisher =
+               publisherService.findById(lien.getPublisherId());
 
-        if (publisher == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        }
+
+       if (publisher == null) {
+           throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+       }
 
         lien.incrementClicks();
 
