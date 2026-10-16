@@ -20,5 +20,9 @@ public class PublisherService {
         public Publisher save(Publisher publisher){
            return publisherRepository.save(publisher);
         }
+
+    public Publisher findById(int id) {
+        return publisherRepository.findById(id);
+    }
     }
 

@@ -8,14 +8,18 @@ PublisherRepositoryImpl implements PublisherRepository {
     private final List<Publisher> publishers = new ArrayList<>();
 
     @Override
-    public List<Publisher> findAll() {
+    public synchronized List<Publisher> findAll() {
         return new ArrayList<>(publishers);
     }
 
     @Override
-    public Publisher save(Publisher publisher) {
+    public synchronized Publisher save(Publisher publisher) {
         publishers.add(publisher);
         return publisher;
+    }
+    @Override
+    public synchronized Publisher findById(int id ){
+        return publishers.stream().filter(p->p.getId() == id).findFirst().orElse(null);
     }
 
 }
