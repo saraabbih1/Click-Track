@@ -22,8 +22,15 @@
           class="ma.youcode.clicktrack.service.PublisherService">
         <constructor-arg ref="publisherRepository"/>
     </bean>
+    <bean id="lienRepository"
+          class="ma.youcode.clicktrack.repository.LienRepositoryImpl"/>
 
-    <bean id="pingController"
-          class="ma.youcode.controller.PingController"/>
+    <bean id="lienService"
+          class="ma.youcode.clicktrack.service.LienService">
+        <constructor-arg ref="lienRepository"/>
+    </bean>
+
+<!--    <bean id="pingController"-->
+<!--          class="ma.youcode.clicktrack.controller.PingController"/>-->
 
 </beans>

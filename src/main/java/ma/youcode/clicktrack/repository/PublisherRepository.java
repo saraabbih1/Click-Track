@@ -5,6 +5,6 @@ import ma.youcode.clicktrack.entity.Publisher;
 
 public interface PublisherRepository {
     List<Publisher> findAll();
-//   Publisher findBy(int id );
+  Publisher findById(int id );
     Publisher save(Publisher publisher);
 }

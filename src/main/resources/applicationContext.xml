@@ -4,5 +4,14 @@
        xsi:schemaLocation="
            http://www.springframework.org/schema/beans
            https://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    <bean id="lienRepository"-->
+<!--          class="ma.youcode.clicktrack.repository.LienRepositoryImpl"/>-->
 
+<!--    <bean id="lienService" class="ma.youcode.clicktrack.service.LienService">-->
+<!--        <constructor-arg ref="lienRepository"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="lienController" class="ma.youcode.clicktrack.controller.LienController">-->
+<!--        <constructor-arg ref="lienService"/>-->
+<!--    </bean>-->
 </beans>
